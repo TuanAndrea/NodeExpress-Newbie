@@ -3,14 +3,18 @@ extends ../layouts/common
 block content
 	h1 Create user
 
+	if errors
+		each error in errors
+			.alert.alert-danger= error
+
 	form(action="/users/create", method="POST")
 		.form-group
 			label(for="name") Name
-			input#name.form-control(name="name", type="text", placeholder="Enter Name")
+			input#name.form-control(name="name", type="text", placeholder="Enter Name", value=values ? values.name : "")
 
 		.form-group
 			label(for="phone") Phone
-			input#phone.form-control(name="phone", type="text", placeholder="Enter Phone")
+			input#phone.form-control(name="phone", type="text", placeholder="Enter Phone", value=values ? values.phone : "")
 
 		button.btn.btn-primary Create
 
