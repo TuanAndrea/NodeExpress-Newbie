@@ -8,6 +8,12 @@ var router = express.Router();
 //Lay user tu lowdb
 router.get('/', controller.index);
 
+//Cookie
+router.get('/cookie', function(req, res, next) {
+	res.cookie('user-id', 12345);
+	res.send('Hello');
+});
+
 //Tim kiem user
 router.get('/search', controller.search);
 
