@@ -1,6 +1,7 @@
 var express = require('express');
 
 var controller = require('../controllers/user.controller');
+var validate = require('../validate/user.validate');
 
 var router = express.Router();
 
@@ -17,6 +18,7 @@ router.get('/create', controller.create);
 router.get('/:id', controller.get);
 
 //Code tao user luu vao lowdb
-router.post('/create', controller.postCreate);
+//middle ware: sau khi check validate xong thi next()
+router.post('/create', validate.postCreate, controller.postCreate);
 
 module.exports = router;
