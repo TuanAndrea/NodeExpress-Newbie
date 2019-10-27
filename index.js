@@ -16,7 +16,7 @@ app.set('views', './views');
 //doc du lieu tu client gui len va chuyen sang obj luu tru vao req.body
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
+app.use(cookieParser('qwertyasdfgqwq123'));
 
 //Render file index dau tien
 app.get('/', function(req, res) {

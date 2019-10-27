@@ -1,7 +1,7 @@
 extends ../layouts/common
 
 block content
-	h1 Create user
+	h1 Login
 
 	if errors
 		each error in errors
@@ -17,5 +17,3 @@ block content
 			input#password.form-control(name="password", type="password", placeholder="Enter password", value=values ? values.password : "")
 
 		button.btn.btn-primary Login
-
-block footer
